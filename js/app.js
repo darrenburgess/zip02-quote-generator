@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
-	$('button').click(function(){
-	    // Get first search result and use as titles
+	
+	function getQuote(){
 		WikiquoteApi.getRandomQuote(
 			'Frank Zappa', 
 			function(newQuote) {
@@ -11,6 +10,12 @@ $(document).ready(function(){
 				$('#quote').replaceWith('Error');
 			}
 		);
+	}
+
+	getQuote();
+
+	$('button').click(function(){
+	    getQuote();
 	});
 
 });
